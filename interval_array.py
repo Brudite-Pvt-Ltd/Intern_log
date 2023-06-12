@@ -1,52 +1,22 @@
-my_arry = []
-i=1
-while True:
-    l = []
-    val = input("Interval " + str(i) + ":  ")
-    if val.lower() == 'q':
-        break
-    a,b = val.split(" ")
-    l.append(int(a))
-    l.append(int(b))
-    my_arry.append(l)
-    i += 1
-print(my_arry)
+def merge_intervals(intervals):
+    # Sort intervals based on start time
+    intervals.sort(key=lambda x: x[0])
 
-my_arry.sort()
-print(my_arry)
+    result = []
+    currentInterval = intervals[0]
 
-count = 1
-for i in range(len(my_arry)-1):
-    if my_arry[i][0] != my_arry[i+1][0]:
-        count += 1
-print(count)
+    for interval in intervals[1:]:
+        if interval[0] <= currentInterval[1]:
+            currentInterval[1] = max(currentInterval[1], interval[1])
+        else:
+            result.append(currentInterval)
+            currentInterval = interval
 
+    result.append(currentInterval)
 
+    return result
 
-# h = []
-# for i in range(len(my_arry)-1):
-#     e = []
-#     # print(e)
-#     if my_arry[i][0] == my_arry[i+1][0]:
-#         e.append(my_arry[i][0])
-#         if my_arry[i][1] >= my_arry[i+1][1]:
-#             e.append(my_arry[i][1])
-#         else:
-#             e.append(my_arry[i+1][1])
-#     else:
-#         continue
-#     # print(e)
-#     # print("\n")
-#     h.append(e)
-# print(h)
+intervals = [[1, 3], [2, 6], [4, 5], [8, 10], [5, 10], [20, 40], [30, 50]]
+merged = merge_intervals(intervals)
+print(merged)
 
-# ar = []
-# for i in range(len(my_arry)-1):
-#     x = []
-#     if my_arry[i][0] == my_arry[i+1][0]:
-#         x.append(my_arry[i][0])
-#         x.append(my_arry[i+1][1])
-#     else:
-#         continue
-#     print(x)
-    
