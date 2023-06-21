@@ -9,6 +9,7 @@ print(a)
 b=list(set(a))
 print(b)
 c = []
+
 for i in b:
     count = 0
     for j in a:
