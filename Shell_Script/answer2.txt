@@ -1,0 +1,10 @@
+SampleClass0: 139
+SampleClass1: 134
+SampleClass2: 138
+SampleClass3: 133
+SampleClass4: 161
+SampleClass5: 151
+SampleClass6: 129
+SampleClass7: 122
+SampleClass8: 137
+SampleClass9: 121
