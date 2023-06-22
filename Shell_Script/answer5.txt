@@ -1,0 +1,1 @@
+2012-02-03 18:35:34 SampleClass5 [TRACE] verbose detail for id 2082654978
